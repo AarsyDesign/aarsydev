@@ -61,7 +61,7 @@
     .hero-overlay {
       position: fixed;
       inset: 0;
-      background: radial-gradient(circle at center, rgba(6, 7, 10, 0.72) 0%, rgba(6, 7, 10, 0.25) 55%, rgba(6, 7, 10, 0.85) 100%);
+      background: radial-gradient(circle at center, rgba(6, 7, 10, 0.45) 0%, rgba(6, 7, 10, 0.10) 60%, rgba(6, 7, 10, 0.70) 100%);
       z-index: 1;
       pointer-events: none;
     }
@@ -414,7 +414,7 @@
         <span>AI Vibe Coder &bull; Full-Stack Builder</span>
       </div>
 
-      <h1 class="hero-title ascii-target" data-value="Rekayasa Produk Nyata. Menggunakan Full AI.">
+      <h1 class="hero-title">
         Rekayasa Produk Nyata. Menggunakan Full AI.
       </h1>
 
@@ -500,13 +500,13 @@
         for (let r = 1; r <= NUM_RINGS; r++) {
           const baseRadius = r * 26 + (Math.sin(time + r * 0.2) * 6);
           
-          // Dynamic alpha based on ring depth: sharp and visible, elegant cyber blue / white
+          // Dynamic alpha based on ring depth: sharp, crisp, high contrast cyber blue
           const depthRatio = r / NUM_RINGS;
-          const alpha = 0.16 + (Math.sin(time * 1.5 + r * 0.4) * 0.05) + (depthRatio * 0.12);
+          const alpha = 0.35 + (Math.sin(time * 1.5 + r * 0.4) * 0.08) + (depthRatio * 0.25);
           
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(147, 197, 253, ${Math.max(0.12, Math.min(0.42, alpha))})`;
-          ctx.lineWidth = 1.15;
+          ctx.strokeStyle = `rgba(147, 197, 253, ${Math.max(0.28, Math.min(0.72, alpha))})`;
+          ctx.lineWidth = 1.35;
 
           for (let p = 0; p <= BASE_POINTS; p++) {
             const angle = (p / BASE_POINTS) * Math.PI * 2;
