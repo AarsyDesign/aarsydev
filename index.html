@@ -312,9 +312,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 100px 24px;
+      padding: 60px 24px 80px;
       box-sizing: border-box;
-      border-top: 1px solid rgba(15, 23, 42, 0.08);
     }
 
     .project-container {
@@ -499,6 +498,130 @@
       box-shadow: 0 0 8px #4ADE80;
     }
 
+    /* Section Page Break / Divider Ornament */
+    .page-break-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 24px;
+      position: relative;
+    }
+
+    .ornament-line {
+      flex: 1;
+      max-width: 240px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(15, 23, 42, 0.15), transparent);
+    }
+
+    .ornament-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #64748B;
+      padding: 6px 16px;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+    }
+
+    .ornament-badge svg {
+      color: #3B82F6;
+    }
+
+    /* Real Image Preview Mockup for PushNotif Card */
+    .project-image-mockup {
+      position: relative;
+      background: #090A0F;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mockup-header-bar {
+      height: 38px;
+      background: #1E293B;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .mockup-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .mockup-dot.dot-red { background: #EF4444; }
+    .mockup-dot.dot-yellow { background: #F59E0B; }
+    .mockup-dot.dot-green { background: #10B981; }
+
+    .mockup-url-bar {
+      margin-left: 12px;
+      flex: 1;
+      max-width: 240px;
+      height: 22px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: #94A3B8;
+    }
+
+    .mockup-img-wrap {
+      position: relative;
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      background: #0F172A;
+    }
+
+    .mockup-img-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      transition: transform 320ms ease;
+    }
+
+    .project-hero-card:hover .mockup-img-wrap img {
+      transform: scale(1.03);
+    }
+
+    .mockup-live-tag {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-pill);
+      padding: 4px 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 0.04em;
+    }
+
     /* Minimal Modern Footer below rounded sheet */
     .built-footer {
       padding: 60px 24px 80px;
@@ -614,6 +737,19 @@
       </div>
     </div>
 
+    <!-- Page Break Ornament / Divider -->
+    <div class="page-break-ornament">
+      <div class="ornament-line"></div>
+      <div class="ornament-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+        <span>Featured Architecture</span>
+      </div>
+      <div class="ornament-line"></div>
+    </div>
+
     <!-- Screen 2: Project 01 PushNotif Platform (Full 1 Halaman) -->
     <div class="project-screen" id="project-pushnotif">
       <div class="project-container">
@@ -639,18 +775,20 @@
               <span class="action-arrow-circle">&nearr;</span>
             </div>
           </div>
-          <div class="project-visual-panel">
-            <div class="visual-top-bar">
-              <span class="visual-dot"></span>
-              <span class="visual-dot"></span>
-              <span class="visual-dot"></span>
+          
+          <!-- Real UI Image Preview Browser Mockup -->
+          <div class="project-image-mockup">
+            <div class="mockup-header-bar">
+              <span class="mockup-dot dot-red"></span>
+              <span class="mockup-dot dot-yellow"></span>
+              <span class="mockup-dot dot-green"></span>
+              <div class="mockup-url-bar">https://pushnotif.biz.id</div>
             </div>
-            <div class="visual-body">
-              <div class="visual-domain">pushnotif.biz.id</div>
-              <p>Instant web push delivery &bull; In-app modal banners &bull; Universal Webhook &bull; Zero SDK bloat</p>
-              <div class="visual-status">
+            <div class="mockup-img-wrap">
+              <img src="assets/pushnotif-preview.webp" alt="PushNotif Platform Live Production UI" loading="lazy" />
+              <div class="mockup-live-tag">
                 <span class="visual-status-dot"></span>
-                <span>Production Live &bull; 99.9% Uptime</span>
+                <span>LIVE PRODUCTION</span>
               </div>
             </div>
           </div>
