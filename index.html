@@ -231,132 +231,272 @@
     .built-section {
       position: relative;
       z-index: 20;
-      background: #FDFBF7; /* Putih agak ivory mewah */
+      background: #FDFBF7; /* Ivory sheet */
       color: #0F172A;
-      border-bottom-left-radius: 48px;
-      border-bottom-right-radius: 48px;
-      padding: 100px 24px 110px;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+      border-bottom-left-radius: 56px;
+      border-bottom-right-radius: 56px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
     }
 
-    .built-container {
-      max-width: 1120px;
+    /* What I've Built Intro: Full 1 Viewport Height (1 Halaman Penuh) */
+    .built-intro-screen {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      box-sizing: border-box;
+      max-width: 960px;
       margin: 0 auto;
-    }
-
-    .built-header {
-      margin-bottom: 64px;
-      text-align: left;
     }
 
     .built-tag {
       font-family: var(--font-mono);
-      font-size: 0.78rem;
+      font-size: 0.85rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #64748B;
-      margin-bottom: 12px;
+      letter-spacing: 0.12em;
+      color: #3B82F6;
+      background: rgba(59, 130, 246, 0.08);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      padding: 6px 18px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 24px;
       display: inline-block;
     }
 
     .built-title {
       font-family: var(--font-sans);
-      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+      font-size: clamp(3rem, 7vw, 5.5rem);
       font-weight: 900;
       letter-spacing: -0.04em;
-      line-height: 1.1;
+      line-height: 1.05;
       color: #090A0F;
-      margin: 0 0 16px;
+      margin: 0 0 24px;
     }
 
     .built-subtitle {
-      font-size: 1.05rem;
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
       color: #475569;
-      max-width: 680px;
+      max-width: 760px;
       line-height: 1.6;
-      margin: 0;
+      margin: 0 0 40px;
     }
 
-    /* Projects Grid in What I've Built */
-    .built-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+    .scroll-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: #64748B;
+      text-transform: uppercase;
     }
 
-    .project-card {
+    .scroll-indicator svg {
+      animation: bounceDown 1.8s infinite ease-in-out;
+    }
+
+    @keyframes bounceDown {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* Full-Screen Project Showcases (1 Halaman per Proyek) */
+    .project-screen {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 24px;
+      box-sizing: border-box;
+      border-top: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .project-container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .project-hero-card {
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
-      border-radius: 24px;
-      padding: 36px 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+      border-radius: 36px;
+      padding: 64px 56px;
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.06);
+      transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 50px;
+      align-items: center;
       text-decoration: none;
       color: inherit;
     }
 
-    .project-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+    .project-hero-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 32px 70px rgba(15, 23, 42, 0.12);
       border-color: #CBD5E1;
     }
 
-    .card-top {
+    .project-info-side {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .project-num-badge {
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #3B82F6;
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+    }
+
+    .project-cat-badge {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #64748B;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .project-hero-title {
+      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: #090A0F;
+      margin: 0 0 18px;
+    }
+
+    .project-hero-desc {
+      font-size: 1.1rem;
+      line-height: 1.65;
+      color: #475569;
+      margin: 0 0 32px;
+    }
+
+    .project-tech-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .tech-chip {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      color: #334155;
+    }
+
+    .project-action-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0F172A;
+    }
+
+    .action-arrow-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #0F172A;
+      color: #FFFFFF;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: transform 200ms ease, background 200ms ease;
+    }
+
+    .project-hero-card:hover .action-arrow-circle {
+      transform: translate(4px, -4px);
+      background: #3B82F6;
+    }
+
+    /* Visual preview panel on right side */
+    .project-visual-panel {
+      background: #090A0F;
+      border-radius: 24px;
+      padding: 36px 30px;
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 280px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .visual-top-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       margin-bottom: 24px;
     }
 
-    .card-index {
+    .visual-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .visual-body {
       font-family: var(--font-mono);
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #3B82F6;
-      margin-bottom: 14px;
-      display: block;
-    }
-
-    .card-title {
-      font-size: 1.45rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: #0F172A;
-      margin: 0 0 10px;
-    }
-
-    .card-desc {
-      font-size: 0.92rem;
+      font-size: 0.88rem;
       line-height: 1.6;
-      color: #64748B;
-      margin: 0;
+      color: rgba(255, 255, 255, 0.8);
+      z-index: 2;
     }
 
-    .card-bottom {
-      display: flex;
+    .visual-domain {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #93C5FD;
+      margin-bottom: 8px;
+    }
+
+    .visual-status {
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
-      padding-top: 24px;
-      border-top: 1px solid #F1F5F9;
-      margin-top: 24px;
+      gap: 8px;
+      font-size: 0.75rem;
+      color: #4ADE80;
+      margin-top: 14px;
     }
 
-    .card-url {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #0F172A;
-    }
-
-    .card-arrow {
-      font-family: var(--font-mono);
-      font-size: 1.1rem;
-      color: #3B82F6;
-      transition: transform 180ms ease;
-    }
-
-    .project-card:hover .card-arrow {
-      transform: translate(3px, -3px);
+    .visual-status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #4ADE80;
+      box-shadow: 0 0 8px #4ADE80;
     }
 
     /* Minimal Modern Footer below rounded sheet */
@@ -382,14 +522,14 @@
 
     /* Mobile Responsive */
     @media (max-width: 960px) {
-      .built-grid {
+      .project-hero-card {
         grid-template-columns: 1fr;
-        gap: 20px;
+        padding: 40px 28px;
+        gap: 32px;
       }
       .built-section {
-        padding: 70px 20px 80px;
-        border-bottom-left-radius: 32px;
-        border-bottom-right-radius: 32px;
+        border-bottom-left-radius: 36px;
+        border-bottom-right-radius: 36px;
       }
     }
 
@@ -457,66 +597,155 @@
 
   <!-- What I've Built Section - Ivory Sheet with Rounded Bottom -->
   <section class="built-section" id="built">
-    <div class="built-container">
-      
-      <div class="built-header">
-        <span class="built-tag">Production Showcase</span>
-        <h2 class="built-title">What I've Built</h2>
-        <p class="built-subtitle">
-          Real production systems and web applications independently engineered and shipped using an end-to-end AI workflow.
-        </p>
+    
+    <!-- Screen 1: What I've Built Big Intro Screen (Full 1 Halaman) -->
+    <div class="built-intro-screen">
+      <span class="built-tag">Production Showcase</span>
+      <h2 class="built-title">What I've Built</h2>
+      <p class="built-subtitle">
+        Real production systems and web applications independently engineered and shipped using an end-to-end AI workflow.
+      </p>
+      <div class="scroll-indicator">
+        <span>Scroll to Explore Projects</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <polyline points="19 12 12 19 5 12"></polyline>
+        </svg>
       </div>
-
-      <div class="built-grid">
-        
-        <!-- Project 1: PushNotif -->
-        <a href="https://pushnotif.biz.id" target="_blank" rel="noopener" class="project-card">
-          <div class="card-top">
-            <span class="card-index">[01] &bull; SAAS INFRASTRUCTURE</span>
-            <h3 class="card-title">PushNotif Platform</h3>
-            <p class="card-desc">
-              Real-time multi-tenant web push notification infrastructure with in-app messaging, webhook delivery, and verified MCP server integration.
-            </p>
-          </div>
-          <div class="card-bottom">
-            <span class="card-url">pushnotif.biz.id</span>
-            <span class="card-arrow">&nearr;</span>
-          </div>
-        </a>
-
-        <!-- Project 2: NataBuild -->
-        <a href="https://natabuild.biz.id" target="_blank" rel="noopener" class="project-card">
-          <div class="card-top">
-            <span class="card-index">[02] &bull; WEB APPLICATION</span>
-            <h3 class="card-title">NataBuild</h3>
-            <p class="card-desc">
-              Construction field operations management platform for daily progress monitoring, automated cost estimation, and team reporting.
-            </p>
-          </div>
-          <div class="card-bottom">
-            <span class="card-url">natabuild.biz.id</span>
-            <span class="card-arrow">&nearr;</span>
-          </div>
-        </a>
-
-        <!-- Project 3: DKAS Portal -->
-        <a href="https://daftarkajian.id" target="_blank" rel="noopener" class="project-card">
-          <div class="card-top">
-            <span class="card-index">[03] &bull; KNOWLEDGE & ARCHIVE</span>
-            <h3 class="card-title">DKAS Portal</h3>
-            <p class="card-desc">
-              Digital archive portal and media stream governance with sub-second indexing across tens of thousands of recordings and public financial logs.
-            </p>
-          </div>
-          <div class="card-bottom">
-            <span class="card-url">daftarkajian.id</span>
-            <span class="card-arrow">&nearr;</span>
-          </div>
-        </a>
-
-      </div>
-
     </div>
+
+    <!-- Screen 2: Project 01 PushNotif Platform (Full 1 Halaman) -->
+    <div class="project-screen" id="project-pushnotif">
+      <div class="project-container">
+        <a href="https://pushnotif.biz.id" target="_blank" rel="noopener" class="project-hero-card">
+          <div class="project-info-side">
+            <div class="project-badge-row">
+              <span class="project-num-badge">01</span>
+              <span class="project-cat-badge">SaaS Infrastructure &bull; Web Push</span>
+            </div>
+            <h3 class="project-hero-title">PushNotif Platform</h3>
+            <p class="project-hero-desc">
+              Real-time multi-tenant web push notification infrastructure with in-app messaging, automated webhooks, custom branding, and verified MCP server integration.
+            </p>
+            <div class="project-tech-chips">
+              <span class="tech-chip">Next.js</span>
+              <span class="tech-chip">TypeScript</span>
+              <span class="tech-chip">Tailwind CSS</span>
+              <span class="tech-chip">Web Push API</span>
+              <span class="tech-chip">Model Context Protocol</span>
+            </div>
+            <div class="project-action-row">
+              <span>Explore pushnotif.biz.id</span>
+              <span class="action-arrow-circle">&nearr;</span>
+            </div>
+          </div>
+          <div class="project-visual-panel">
+            <div class="visual-top-bar">
+              <span class="visual-dot"></span>
+              <span class="visual-dot"></span>
+              <span class="visual-dot"></span>
+            </div>
+            <div class="visual-body">
+              <div class="visual-domain">pushnotif.biz.id</div>
+              <p>Instant web push delivery &bull; In-app modal banners &bull; Universal Webhook &bull; Zero SDK bloat</p>
+              <div class="visual-status">
+                <span class="visual-status-dot"></span>
+                <span>Production Live &bull; 99.9% Uptime</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Screen 3: Project 02 NataBuild (Full 1 Halaman) -->
+    <div class="project-screen" id="project-natabuild">
+      <div class="project-container">
+        <a href="https://natabuild.biz.id" target="_blank" rel="noopener" class="project-hero-card">
+          <div class="project-info-side">
+            <div class="project-badge-row">
+              <span class="project-num-badge">02</span>
+              <span class="project-cat-badge">Web Application &bull; Project Ops</span>
+            </div>
+            <h3 class="project-hero-title">NataBuild</h3>
+            <p class="project-hero-desc">
+              Construction field operations management platform designed for daily on-site progress tracking, automated budget calculations, material requisition, and rapid owner reporting.
+            </p>
+            <div class="project-tech-chips">
+              <span class="tech-chip">Next.js App Router</span>
+              <span class="tech-chip">PostgreSQL</span>
+              <span class="tech-chip">Prisma ORM</span>
+              <span class="tech-chip">Tailwind CSS</span>
+              <span class="tech-chip">Cloudflare R2</span>
+            </div>
+            <div class="project-action-row">
+              <span>Explore natabuild.biz.id</span>
+              <span class="action-arrow-circle">&nearr;</span>
+            </div>
+          </div>
+          <div class="project-visual-panel">
+            <div class="visual-top-bar">
+              <span class="visual-dot"></span>
+              <span class="visual-dot"></span>
+              <span class="visual-dot"></span>
+            </div>
+            <div class="visual-body">
+              <div class="visual-domain">natabuild.biz.id</div>
+              <p>Real-time field logging &bull; Material tracking &bull; Instant PDF progress reports &bull; Subcontractor management</p>
+              <div class="visual-status">
+                <span class="visual-status-dot"></span>
+                <span>Production Live &bull; Active Contractors</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Screen 4: Project 03 DKAS Portal (Full 1 Halaman) -->
+    <div class="project-screen" id="project-dkas">
+      <div class="project-container">
+        <a href="https://daftarkajian.id" target="_blank" rel="noopener" class="project-hero-card">
+          <div class="project-info-side">
+            <div class="project-badge-row">
+              <span class="project-num-badge">03</span>
+              <span class="project-cat-badge">Knowledge & Archive &bull; Audio Media</span>
+            </div>
+            <h3 class="project-hero-title">DKAS Portal</h3>
+            <p class="project-hero-desc">
+              Comprehensive digital archive portal and media stream governance platform featuring sub-second indexing across tens of thousands of Islamic lecture recordings, speaker catalog, and public financial transparency.
+            </p>
+            <div class="project-tech-chips">
+              <span class="tech-chip">Next.js</span>
+              <span class="tech-chip">TypeScript</span>
+              <span class="tech-chip">Audio Streaming</span>
+              <span class="tech-chip">Full-Text Search</span>
+              <span class="tech-chip">Public Ledger</span>
+            </div>
+            <div class="project-action-row">
+              <span>Explore daftarkajian.id</span>
+              <span class="action-arrow-circle">&nearr;</span>
+            </div>
+          </div>
+          <div class="project-visual-panel">
+            <div class="visual-top-bar">
+              <span class="visual-dot"></span>
+              <span class="visual-dot"></span>
+              <span class="visual-dot"></span>
+            </div>
+            <div class="visual-body">
+              <div class="visual-domain">daftarkajian.id</div>
+              <p>50,000+ indexed audio lectures &bull; Sub-second multi-criteria search &bull; Low-latency streaming &bull; Open financial audits</p>
+              <div class="visual-status">
+                <span class="visual-status-dot"></span>
+                <span>Production Live &bull; Community Verified</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
   </section>
 
   <!-- Clean Minimalist Footer -->
