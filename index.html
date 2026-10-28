@@ -39,7 +39,7 @@
 
     html, body {
       width: 100%;
-      height: 100%;
+      min-height: 100%;
       background-color: #06070a;
       color: var(--color-text-primary);
       font-family: var(--font-sans);
@@ -171,192 +171,182 @@
     .hero-main {
       position: relative;
       z-index: 10;
-      min-height: 100vh;
+      min-height: 88vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 100px 24px 60px;
+      padding: 120px 24px 80px;
       text-align: center;
       box-sizing: border-box;
     }
 
-    .hero-content {
-      max-width: 860px;
+    /* What I've Built Section - Ivory Sheet with Rounded Bottom */
+    .built-section {
+      position: relative;
+      z-index: 20;
+      background: #FDFBF7; /* Putih agak ivory mewah */
+      color: #0F172A;
+      border-bottom-left-radius: 48px;
+      border-bottom-right-radius: 48px;
+      padding: 100px 24px 110px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    .built-container {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .built-header {
+      margin-bottom: 64px;
+      text-align: left;
+    }
+
+    .built-tag {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #64748B;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .built-title {
+      font-family: var(--font-sans);
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      color: #090A0F;
+      margin: 0 0 16px;
+    }
+
+    .built-subtitle {
+      font-size: 1.05rem;
+      color: #475569;
+      max-width: 680px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Projects Grid in What I've Built */
+    .built-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .project-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 24px;
+      padding: 36px 30px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-    }
-
-    .hero-pill-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 16px;
-      border-radius: var(--radius-pill);
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: #93C5FD;
-      margin-bottom: 24px;
-      text-transform: uppercase;
-    }
-
-    .hero-title {
-      font-size: clamp(2.3rem, 5.4vw, 4.2rem);
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -0.04em;
-      color: #ffffff;
-      margin-bottom: 20px;
-      text-shadow: 0 4px 28px rgba(0, 0, 0, 0.8);
-    }
-
-    .hero-subtitle {
-      font-size: clamp(1.0rem, 1.7vw, 1.2rem);
-      font-weight: 400;
-      line-height: 1.6;
-      color: var(--color-text-secondary);
-      max-width: 680px;
-      margin-bottom: 34px;
-      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.75);
-    }
-
-    /* Command / Action Pill Box */
-    .command-form {
-      width: 100%;
-      max-width: 520px;
-      margin-bottom: 20px;
-    }
-
-    .form-pill-container {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      padding: 6px 8px 6px 18px;
-      border-radius: var(--radius-pill);
-      background: rgba(15, 23, 42, 0.7);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.55);
-      transition: border-color var(--transition-smooth), box-shadow var(--transition-smooth);
-    }
-
-    .form-pill-container:focus-within {
-      border-color: rgba(96, 165, 250, 0.65);
-      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.7);
-    }
-
-    .command-prefix {
-      color: #60A5FA;
-      font-family: var(--font-mono);
-      font-size: 0.88rem;
-      font-weight: 700;
-      margin-right: 8px;
-      user-select: none;
-    }
-
-    .command-input {
-      flex: 1;
-      background: transparent;
-      border: none;
-      outline: none;
-      font-family: var(--font-mono);
-      font-size: 0.9rem;
-      color: #ffffff;
-      cursor: default;
-    }
-
-    .btn-icon-copy {
-      position: relative;
-      height: 36px;
-      padding: 0 16px;
-      border-radius: var(--radius-pill);
-      background: #ffffff;
-      border: none;
-      color: #0c0d12;
-      font-family: var(--font-sans);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      transition: transform 150ms ease, background 150ms ease;
-    }
-
-    .btn-icon-copy:hover {
-      background: #E2E8F0;
-      transform: scale(1.02);
-    }
-
-    .btn-icon-copy:active {
-      transform: scale(0.97);
-    }
-
-    /* Disclaimer / Authenticity Statement */
-    .disclaimer-text {
-      font-size: 0.84rem;
-      line-height: 1.6;
-      color: var(--color-text-muted);
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
-      max-width: 620px;
-    }
-
-    .disclaimer-text strong {
-      color: #ffffff;
-      font-weight: 600;
-    }
-
-    /* Key Systems Quick Bar */
-    .systems-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 32px;
-    }
-
-    .system-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 16px;
-      border-radius: var(--radius-pill);
-      background: rgba(15, 23, 42, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      justify-content: space-between;
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
       text-decoration: none;
-      color: rgba(255, 255, 255, 0.92);
-      font-size: 0.82rem;
-      font-weight: 600;
-      transition: all 180ms ease;
+      color: inherit;
     }
 
-    .system-chip:hover {
-      background: rgba(255, 255, 255, 0.12);
-      border-color: rgba(96, 165, 250, 0.5);
-      color: #ffffff;
-      transform: translateY(-1px);
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+      border-color: #CBD5E1;
     }
 
-    .system-chip .chip-tag {
+    .card-top {
+      margin-bottom: 24px;
+    }
+
+    .card-index {
       font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: #60A5FA;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #3B82F6;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .card-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #0F172A;
+      margin: 0 0 10px;
+    }
+
+    .card-desc {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: #64748B;
+      margin: 0;
+    }
+
+    .card-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 24px;
+      border-top: 1px solid #F1F5F9;
+      margin-top: 24px;
+    }
+
+    .card-url {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #0F172A;
+    }
+
+    .card-arrow {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      color: #3B82F6;
+      transition: transform 180ms ease;
+    }
+
+    .project-card:hover .card-arrow {
+      transform: translate(3px, -3px);
+    }
+
+    /* Minimal Modern Footer below rounded sheet */
+    .built-footer {
+      padding: 60px 24px 80px;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+      color: var(--color-text-dim);
+      font-size: 0.84rem;
+    }
+
+    .built-footer a {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 150ms ease;
+    }
+
+    .built-footer a:hover {
+      color: #ffffff;
     }
 
     /* Mobile Responsive */
+    @media (max-width: 960px) {
+      .built-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .built-section {
+        padding: 70px 20px 80px;
+        border-bottom-left-radius: 32px;
+        border-bottom-right-radius: 32px;
+      }
+    }
+
     @media (max-width: 768px) {
       .nav-inner {
         padding: 0 20px;
@@ -365,13 +355,7 @@
         display: none;
       }
       .hero-main {
-        padding: 85px 16px 40px;
-      }
-      .form-pill-container {
-        padding: 5px 6px 5px 14px;
-      }
-      .command-input {
-        font-size: 0.82rem;
+        padding: 100px 16px 60px;
       }
     }
   </style>
@@ -422,43 +406,77 @@
         Arsyad (aarsydev). AI Vibe Coder yang mengubah ide, Figma, dan arsitektur menjadi aplikasi web produksi siap pakai dengan kecepatan peluncuran tinggi bertenaga AI.
       </p>
 
-      <!-- Interactive Command / Action Box -->
-      <form class="command-form" onsubmit="event.preventDefault(); copyCommand();">
-        <div class="form-pill-container">
-          <span class="command-prefix">$</span>
-          <input class="command-input" id="cmd-input" type="text" value="npx @pushnotif/sdk init" readonly />
-          <button type="submit" class="btn-icon-copy" id="btn-copy">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-            <span id="copy-label">SALIN</span>
-          </button>
-        </div>
-      </form>
+    </div>
+  </main>
 
-      <p class="disclaimer-text">
-        <strong>Workflow utama:</strong> Antigravity CLI dipadukan dengan model Google Gemini. Hasil kerja terbukti lewat produk live: PushNotif, NataBuild, dan DKAS Portal.
-      </p>
+  <!-- What I've Built Section - Ivory Sheet with Rounded Bottom -->
+  <section class="built-section" id="built">
+    <div class="built-container">
+      
+      <div class="built-header">
+        <span class="built-tag">Production Showcase</span>
+        <h2 class="built-title">What I've Built</h2>
+        <p class="built-subtitle">
+          Sistem dan aplikasi web produksi nyata yang dibangun dan dirilis secara mandiri menggunakan workflow full AI.
+        </p>
+      </div>
 
-      <!-- Key Systems Quick Access -->
-      <div class="systems-row">
-        <a href="https://pushnotif.biz.id" target="_blank" rel="noopener" class="system-chip">
-          <span class="chip-tag">[01]</span>
-          <span>PushNotif Platform</span>
+      <div class="built-grid">
+        
+        <!-- Project 1: PushNotif -->
+        <a href="https://pushnotif.biz.id" target="_blank" rel="noopener" class="project-card">
+          <div class="card-top">
+            <span class="card-index">[01] &bull; SAAS INFRASTRUCTURE</span>
+            <h3 class="card-title">PushNotif Platform</h3>
+            <p class="card-desc">
+              Infrastruktur web push notification multi-tenant real-time dengan in-app messaging, webhook delivery, dan server MCP terverifikasi.
+            </p>
+          </div>
+          <div class="card-bottom">
+            <span class="card-url">pushnotif.biz.id</span>
+            <span class="card-arrow">&nearr;</span>
+          </div>
         </a>
-        <a href="https://natabuild.biz.id" target="_blank" rel="noopener" class="system-chip">
-          <span class="chip-tag">[02]</span>
-          <span>NataBuild Construction</span>
+
+        <!-- Project 2: NataBuild -->
+        <a href="https://natabuild.biz.id" target="_blank" rel="noopener" class="project-card">
+          <div class="card-top">
+            <span class="card-index">[02] &bull; WEB APPLICATION</span>
+            <h3 class="card-title">NataBuild</h3>
+            <p class="card-desc">
+              Platform manajemen proyek konstruksi lapangan untuk monitoring progres harian, kalkulasi estimasi anggaran, dan pelaporan operasional.
+            </p>
+          </div>
+          <div class="card-bottom">
+            <span class="card-url">natabuild.biz.id</span>
+            <span class="card-arrow">&nearr;</span>
+          </div>
         </a>
-        <a href="https://daftarkajian.id" target="_blank" rel="noopener" class="system-chip">
-          <span class="chip-tag">[03]</span>
-          <span>DKAS Portal Archive</span>
+
+        <!-- Project 3: DKAS Portal -->
+        <a href="https://daftarkajian.id" target="_blank" rel="noopener" class="project-card">
+          <div class="card-top">
+            <span class="card-index">[03] &bull; KNOWLEDGE & ARCHIVE</span>
+            <h3 class="card-title">DKAS Portal</h3>
+            <p class="card-desc">
+              Portal arsip digital dan tata kelola media audio kajian dengan indexing cepat sub-detik untuk puluhan ribu rekaman dan pembukuan transparan.
+            </p>
+          </div>
+          <div class="card-bottom">
+            <span class="card-url">daftarkajian.id</span>
+            <span class="card-arrow">&nearr;</span>
+          </div>
         </a>
+
       </div>
 
     </div>
-  </main>
+  </section>
+
+  <!-- Clean Minimalist Footer -->
+  <footer class="built-footer">
+    <p>&copy; 2026 Arsyad (aarsydev). Dibangun dengan Antigravity CLI &amp; Google Gemini. Kode publik di <a href="https://github.com/AarsyDesign" target="_blank" rel="noopener">GitHub</a>.</p>
+  </footer>
 
   <!-- Animated Interactive Topographic Canvas & ASCII Scramble -->
   <script>
