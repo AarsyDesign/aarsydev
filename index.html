@@ -171,14 +171,60 @@
     .hero-main {
       position: relative;
       z-index: 10;
-      min-height: 88vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 120px 24px 80px;
+      padding: 100px 24px 60px;
       text-align: center;
       box-sizing: border-box;
+    }
+
+    .hero-content {
+      max-width: 860px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: #93C5FD;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      font-size: clamp(2.3rem, 5.4vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      color: #ffffff;
+      margin-bottom: 20px;
+      text-shadow: 0 4px 28px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.0rem, 1.7vw, 1.2rem);
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--color-text-secondary);
+      max-width: 680px;
+      margin-bottom: 34px;
+      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.75);
     }
 
     /* What I've Built Section - Ivory Sheet with Rounded Bottom */
